@@ -55,11 +55,10 @@ nav {
 	p {
 		font-family:Arial;
 		font-weight:bold;
-		color:purple;
 
 		@include vertical-align();
 
-		font-size:160px
+		font-size:160px;
 	}
 
 	&.first, &.third {

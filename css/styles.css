@@ -19,7 +19,6 @@ nav {
   .container p {
     font-family: Arial;
     font-weight: bold;
-    color: purple;
     position: relative;
     top: 50%;
     -webkit-transform: translateY(-50%);
