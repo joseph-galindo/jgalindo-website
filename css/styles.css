@@ -1,0 +1,40 @@
+body, p, nav {
+  margin: 0;
+  padding: 0; }
+
+nav {
+  float: left;
+  position: fixed;
+  z-index: 10; }
+  nav ul li {
+    list-style-type: none;
+    font-size: 1em; }
+
+.container {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+  text-align: center; }
+  .container p {
+    font-family: Arial;
+    font-weight: bold;
+    color: purple;
+    position: relative;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    font-size: 160px; }
+  .container.first, .container.third {
+    background-color: white;
+    opacity: .5; }
+    .container.first p, .container.third p {
+      opacity: .5;
+      color: black; }
+  .container.second, .container.fourth {
+    background-color: black;
+    opacity: .5; }
+    .container.second p, .container.fourth p {
+      opacity: .5;
+      color: white; }
