@@ -29,11 +29,11 @@ nav {
     background-color: white;
     opacity: .5; }
     .container.first p, .container.third p {
-      opacity: .5;
       color: black; }
   .container.second, .container.fourth {
     background-color: black;
     opacity: .5; }
     .container.second p, .container.fourth p {
-      opacity: .5;
       color: white; }
+  .container .content {
+    visibility: hidden; }

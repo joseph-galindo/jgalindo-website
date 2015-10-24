@@ -1,6 +1,6 @@
 $(document).ready(function() {
 
-	console.log('doc ready');
+	//VARIABLES
 
 	//Tween Vars
 	var first = $('#first');
@@ -13,39 +13,38 @@ $(document).ready(function() {
 	var t3 = $('#title3');
 	var t4 = $('#title4');
 
+	var c1 = $('#content1');
+	var c2 = $('#content2');
+	var c3 = $('#content3');
+	var c4 = $('#content4');
+
 	//Text vars
 
-	var colorfirst = first.css('background-color');
-	var colorsecond = second.css('background-color');
+	var seconds = 1;
 
-	var seconds = 10;
+	//FUNCTIONS
 
-	var tweenContainers = function() {
+	var fadeoutTitle = function(title, content) {
 
-		TweenMax.to(first,seconds,{backgroundColor:colorsecond, ease: Sine.easeInOut});
-		TweenMax.to(second,seconds,{backgroundColor:colorfirst, ease: Sine.easeInOut});
-		TweenMax.to(third,seconds,{backgroundColor:colorsecond, ease: Sine.easeInOut});
-		TweenMax.to(fourth,seconds,{backgroundColor:colorfirst, ease: Sine.easeInOut});
+		console.log('hovered over container');
 
-		TweenMax.to(t1,seconds,{color:colorfirst, ease: Sine.easeInOut});
-		TweenMax.to(t2,seconds,{color:colorsecond, ease: Sine.easeInOut});
-		TweenMax.to(t3,seconds,{color:colorfirst, ease: Sine.easeInOut});
-		TweenMax.to(t4,seconds,{color:colorsecond, ease: Sine.easeInOut});
-
-		var temp = colorfirst;
-		colorfirst = colorsecond;
-		colorsecond = temp;
+		TweenMax.to(title,1,{autoAlpha:0});
+		TweenMax.to(content,1,{autoAlpha:1});
 	};
 
-	//to start at t=0
-	tweenContainers();
-	//then loop infinitely
-	setInterval(tweenContainers,seconds*1000);
+	var fadeoutContent = function(title, content) {
+
+		console.log('leave container');
+
+		TweenMax.to(title,1,{autoAlpha:1});
+		TweenMax.to(content,1,{autoAlpha:0});
+	};
+
+	//INIT
+
+	first.hover(function() {fadeoutTitle(t1,c1)}, function() {fadeoutContent(t1,c1)});
+	second.hover(function() {fadeoutTitle(t2,c2)},function() {fadeoutContent(t2,c2)}); 
+	third.hover(function() {fadeoutTitle(t3,c3)},function() {fadeoutContent(t3,c3)}); 
+	fourth.hover(function() {fadeoutTitle(t4,c4)},function() {fadeoutContent(t4,c4)});  
 
 });
-
-//Functions
-
-var x = function() {
-	return 1+2;
-};
