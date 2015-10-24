@@ -59,6 +59,10 @@ nav {
 		@include vertical-align();
 
 		font-size:160px;
+
+		&.content {
+			position:absolute;
+		}
 	}
 
 	&.first, &.third {

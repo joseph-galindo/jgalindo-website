@@ -25,6 +25,8 @@ nav {
     -ms-transform: translateY(-50%);
     transform: translateY(-50%);
     font-size: 160px; }
+    .container p.content {
+      position: absolute; }
   .container.first, .container.third {
     background-color: white;
     opacity: .5; }
