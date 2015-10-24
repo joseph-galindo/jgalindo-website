@@ -32,6 +32,8 @@ $(document).ready(function() {
 		'4': 'I listen to way too much music.'
 	};
 
+	//sad
+	
 	//FUNCTIONS
 
 	var fadeIntoContent = function(title, idx) {
