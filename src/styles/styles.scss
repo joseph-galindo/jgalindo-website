@@ -1,12 +1,12 @@
 //import any util styles
 
-@import 'util/_reset.scss';
-@import 'util/_media_queries.scss';
+@import './util/_reset.scss';
+@import './util/_media_queries.scss';
 
 //import styles for any partials
 
-@import 'partials/_header--global.scss';
-@import 'partials/_footer--global.scss';
+@import './partials/_header--global.scss';
+@import './partials/_footer--global.scss';
 
 //import styles for any pages
 
