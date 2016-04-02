@@ -1,0 +1,37 @@
+body {
+
+	//declare fonts
+
+	// font-family: 'Cabin', sans-serif;
+	font-family: 'Montserrat', sans-serif;
+
+	//headings
+
+	h1 {
+		font-weight:400;
+		font-size:32px;
+	}
+
+	//p, span, etc
+
+	p {
+		font-weight:400;
+		font-size:32px;
+		line-height:40px;
+	}
+
+	@include mq("md") {
+
+		p {
+			font-size: 28px;
+			line-height:36px;
+		}
+	}
+
+	@include mq("sm") {
+		p {
+			font-size:21px;
+			line-height:29px;
+		}
+	}
+}
