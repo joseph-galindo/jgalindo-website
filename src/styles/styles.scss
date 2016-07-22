@@ -1,6 +1,14 @@
-//import any util styles
+//import reset before any other styles
 
 @import './util/_reset.scss';
+
+//import vendor styles
+
+@import './util/_bootstrap.min.scss';
+@import './util/_bootstrap-theme.min.scss';
+
+//import any util styles
+
 @import './util/_media_queries.scss';
 @import './util/_typography.scss';
 

@@ -1,85 +1,47 @@
 .page--index {
 
-	background-color:#2C649E;
-
 	section {
-
-		width:100%;
-		margin-bottom:50px;
-
-		.wrap-content {
-			position:relative;
-
-			width:80%;
-
-			margin:0 auto;
-
-			text-align:center;
-
-			padding-top:50px;
-
-			.text-container {
-				position:relative;
-				width:100%;
-			}
-		}
 	}
 
 	.section--intro {
+		background-color:#2C649E;
 
-		.text-container {
+		text-align:center;
 
-			$text-color: white;
-			$link-color: #A4CCFF;
+		$link-color:#bbeafd;
+		$font-color:white;
 
-			color: $text-color;
+		color:$font-color;
 
-			p:nth-child(n+2) {
-				margin-top:25px;
+		a, a:visited {
+			display:inline-block;
+			color: $link-color;
+			text-decoration:none;
+
+			&:after {					
+				content: '';
+				display:block;
+
+				height:2px;
+				width:0px;
+
+				background-color:transparent;
+
+				transition:width 300ms ease-in, background-color 300ms ease-in;
 			}
+		}
 
-			a, a:visited {
-				display:inline-block;
-				color: $link-color;
-				text-decoration:none;
+		a:hover {
 
-				&:after {					
-					content: '';
-					display:block;
+			&:after {
+				width: 100%;
+				background-color:$link-color;
 
-					height:2px;
-					width:0px;
-
-					background-color:transparent;
-
-					transition:width 300ms ease-in, background-color 300ms ease-in;
-				}
-			}
-
-			a:hover {
-
-				&:after {
-					width: 100%;
-					background-color:$link-color;
-
-					transition:width 300ms ease-in, background-color 300ms ease-in;
-				}
+				transition:width 300ms ease-in, background-color 300ms ease-in;
 			}
 		}
 	}
 
 	.section--necrodancer {
-
-		.container {
-
-			background:linear-gradient(0deg, #2F2D33, #BD9595);
-			// background: url("../img/necrodancer_conga.png");
-			background-size:cover;
-			background-position:center;
-
-			.box {
-				background-color: #922121;
-			}
-		}
 	}
 }

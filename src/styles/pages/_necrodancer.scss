@@ -1,80 +1,13 @@
 .page--necrodancer {
 
-	section {
-
-		height: 600px;
-
-		.container {
-
-			position:relative;
-
-			width:100%;
-			height: 100%;
-
-			.wrap-content {
-				position:absolute;
-
-				width:85%;
-				height:70%;
-
-				top:0;
-				left:0;
-				bottom:0;
-				right:0;
-
-				margin:auto;
-
-				text-align:center;
-
-				.text-container {
-
-					position:absolute;
-
-					top:50%;
-					left:50%;
-
-					transform:translate(-50%, -50%);
-					width: 90%;
-				}
-			}
-		}
-	}
-
 	.section--intro {
 
 		&:after {
-
-			content: '';
-			display:block;
-			position:absolute;
-
-			left:0;
-			top:0;
-
-			width:100%;
-			height:100%;
-			z-index:-1;
-			opacity:0.55;
 
 			background-image: url("../img/necrodancer_conga.png");
 			background-size:cover;
 			background-repeat:no-repeat;
 		}
-
-		@include mq("sm") {
-
-			&:after {
-				background-position: 38% 100%;
-			}
-		}
-
-		@include mq("md") {
-
-			&:after {
-				background-position: 30% 100%;
-			}
-		}
-
 	}
 
 }

@@ -12,18 +12,17 @@ html(lang="en")
         meta(name="keywords", content="#{page.keywords}")
 
         meta(name="format-detection", content="telephone=no")
-        meta(id="viewport", name="viewport", content="target-densitydpi=device-dpi, width=device-width, user-scalable=0, minimal-ui")
+        meta(id="viewport", name="viewport", content="width=device-width, initial-scale=1")
 
         //- set up link tags
 
         link(rel="stylesheet" type="text/css" href="css/styles.css")
-        link(rel="stylesheet" type="text/css" href='https://fonts.googleapis.com/css?family=Cabin|Montserrat:400,700')
-        link(rel="stylesheet" type="text/css" href='https://fonts.googleapis.com/css?family=Cabin')
         link(rel="icon", type="image/x-icon", href="/favicon.ico")
 
         //- set up script tags
 
         script(src="js/jquery.min.js")
+        script(src="js/bootstrap.min.js")
         script(src="js/app.js")
 
     body(ontouchstart="", class="page--#{page.section}")
