@@ -1,7 +1,5 @@
 $(function() {
 
-	console.log('document ready from app.js');
-
 	//declare functions
 
 	function checkHeaderPos() {
@@ -47,12 +45,10 @@ $(function() {
 	//declare listeners
 
 	$(window).scroll(function(event) {
-		console.log('scroll');
 		checkHeaderPos();
 	});
 
 	//arbitrary executions go here
 
 	checkNav();
-
 });

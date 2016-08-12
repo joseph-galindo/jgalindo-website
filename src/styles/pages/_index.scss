@@ -12,10 +12,6 @@
 			color: $text-color;
 			text-align:center;
 
-			p:nth-child(n+2) {
-				margin-top:25px;
-			}
-
 			a, a:visited {
 				display:inline-block;
 				color: $link-color;
@@ -47,16 +43,17 @@
 	}
 
 	.section--necrodancer {
+		
+		.button {
+			max-height:50px;
+			background-color:red;
 
-		.container {
+			text-align:center;
+			line-height:50px;
 
-			background:linear-gradient(0deg, #2F2D33, #BD9595);
-			// background: url("../img/necrodancer_conga.png");
-			background-size:cover;
-			background-position:center;
-
-			.box {
-				background-color: #922121;
+			p {
+				font-size:20px;
+				background-color:red;
 			}
 		}
 	}
