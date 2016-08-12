@@ -2,37 +2,15 @@
 
 	background-color:#2C649E;
 
-	section {
-
-		width:100%;
-		margin-bottom:50px;
-
-		.wrap-content {
-			position:relative;
-
-			width:80%;
-
-			margin:0 auto;
-
-			text-align:center;
-
-			padding-top:50px;
-
-			.text-container {
-				position:relative;
-				width:100%;
-			}
-		}
-	}
-
 	.section--intro {
 
 		.text-container {
 
-			$text-color: white;
+			$text-color: #FFFFFF;
 			$link-color: #A4CCFF;
 
 			color: $text-color;
+			text-align:center;
 
 			p:nth-child(n+2) {
 				margin-top:25px;

@@ -1,7 +1,11 @@
-//import any util styles
+//import reset first
 
 @import './util/_reset.scss';
+
+//then import any util styles
+
 @import './util/_media_queries.scss';
+@import './util/_base.scss';
 @import './util/_typography.scss';
 
 //import styles for any partials

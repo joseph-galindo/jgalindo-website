@@ -20,6 +20,37 @@ body {
 		line-height:40px;
 	}
 
+	$link-color: #A4CCFF;
+
+	a, a:visited {
+
+		display:inline-block;
+		color: $link-color;
+		text-decoration:none;
+
+		&:after {					
+			content: '';
+			display:block;
+
+			height:2px;
+			width:0px;
+
+			background-color:transparent;
+
+			transition:width 300ms ease-in, background-color 300ms ease-in;
+		}
+	}
+
+	a:hover, a.active {
+
+		&:after {
+			width: 100%;
+			background-color:$link-color;
+
+			transition:width 300ms ease-in, background-color 300ms ease-in;
+		}
+	}
+
 	@include mq("md") {
 
 		p {
