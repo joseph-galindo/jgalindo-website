@@ -1,0 +1,19 @@
+scripts:
+  # Top level util scripts
+  clean: rm -rf build/
+
+  # Build scripts
+  build:
+    default: nps clean && nps build.node
+    node: webpack --env.target=node --mode=development
+  dist:
+    default: nps clean && nps dist.node
+    node: webpack --env.target=node --mode=production
+
+  # Local development scripts
+  watch:
+    default: >-
+      nps clean &&
+      concurrently "nps watch.nodeBundle" "nps watch.nodeServer"
+    nodeBundle: webpack --watch --env.target=node --mode=development
+    nodeServer: nodemon --exec "node ."
