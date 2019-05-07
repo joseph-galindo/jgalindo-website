@@ -1,7 +1,5 @@
-__jgalindo Personal Website Dev__
+## Personal Website
 
-This project build assumes you are familiar with node.js and npm.
+This repository has the source code for the Node.js web application hosted at https://josephgalindo.dev
 
-To build this project, install node.js and run `npm i`.
-
-From there, you can refer to the tasks in `Gruntfile.js`, or run `grunt` to get started.
+This is an active work in progress. This README will be updated with further documentation in the future.
