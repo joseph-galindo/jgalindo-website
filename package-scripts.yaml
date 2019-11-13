@@ -1,6 +1,8 @@
 scripts:
   # Top level util scripts
-  clean: rm -rf build/
+  clean: 
+    default: rm -rf build/
+    dependencies: rm -rf node_modules/ && pnpm i
 
   # Build scripts
   build:
