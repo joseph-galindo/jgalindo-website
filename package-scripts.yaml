@@ -6,16 +6,21 @@ scripts:
 
   # Build scripts
   build:
-    default: nps clean && nps build.node
+    default: nps clean && && nps build.web && nps build.node
+    web: webpack --env.target=web --mode=development
     node: webpack --env.target=node --mode=development
   dist:
-    default: nps clean && nps dist.node
+    default: nps clean && nps dist.web && nps dist.node
+    web: webpack --env.target=web --mode=production
     node: webpack --env.target=node --mode=production
 
   # Local development scripts
   watch:
     default: >-
       nps clean &&
-      concurrently "nps watch.nodeBundle" "nps watch.nodeServer"
+      ttab pnpm start watch.webBundle &&
+      ttab pnpm start watch.nodeBundle &&
+      ttab pnpm start watch.nodeServer
+    webBundle: webpack --watch --env.target=web --mode=development
     nodeBundle: webpack --watch --env.target=node --mode=development
     nodeServer: nodemon --exec "node ."

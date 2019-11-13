@@ -2,6 +2,10 @@ const path = require('path');
 const webpackNodeExternals = require('webpack-node-externals');
 
 module.exports = function ({target}) {
+    const webTSConfig = {
+      module: 'ESNEXT',
+      target: 'ES2015',
+    };
     const nodeTSConfig = {
       module: 'commonjs',
       target: 'ES2018',
@@ -12,8 +16,9 @@ module.exports = function ({target}) {
       target,
       entry: path.join(__dirname, `src/${target}-entrypoint.tsx`),
       output: {
-        path: path.join(__dirname, 'build'),
+        path: path.join(__dirname, 'build', target === 'web' ? 'public' : ''),
         filename: `${target}.bundle.js`,
+        publicPath: path.join('/', 'static/'),
       },
       resolve: {
         extensions: ['.js', '.jsx', '.ts', '.tsx'],
@@ -26,7 +31,7 @@ module.exports = function ({target}) {
             exclude: /node_modules/,
             loader: 'ts-loader',
             options: {
-              compilerOptions: nodeTSConfig,
+              compilerOptions: target === 'web' ? webTSConfig : nodeTSConfig,
               onlyCompileBundledFiles: true,
             },
           },

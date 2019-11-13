@@ -1,16 +1,20 @@
 dependencies:
   koa: 2.11.0
+  koa-static-server: 1.4.0
   react: 16.11.0
   react-dom: 16.11.0_react@16.11.0
   stream-template: 0.0.10
 devDependencies:
   '@types/koa': 2.0.52
+  '@types/koa-static-server': 1.3.0
+  '@types/node': 12.12.7
   '@types/react': 16.9.11
   '@types/react-dom': 16.9.4
   concurrently: 5.0.0
   nodemon: 1.19.4
   nps: 5.9.8
   ts-loader: 6.2.1_typescript@3.7.2
+  ttab: 0.6.1
   typescript: 3.7.2
   webpack: 4.41.2_webpack@4.41.2
   webpack-cli: 3.3.10_webpack@4.41.2
@@ -74,6 +78,12 @@ packages:
     dev: true
     resolution:
       integrity: sha512-B8nG/OoE1ORZqCkBVsup/AKcvjdgoHnfi4pZMn5UwAPCbhk/96xyv284eBYW8JlQbQ7zDmnpFr68I/40mFoIBQ==
+  /@types/koa-static-server/1.3.0:
+    dependencies:
+      '@types/koa': 2.0.52
+    dev: true
+    resolution:
+      integrity: sha512-iSAB4/LE5TJvvdtIWjBvdHKAymLeVtW4TlOn1yG1CWRo6MbvZUYTIgnG9F3zyStQzk2J9sa8YnPpLWyLfrWXCw==
   /@types/koa/2.0.52:
     dependencies:
       '@types/accepts': 1.3.5
@@ -986,7 +996,6 @@ packages:
   /debug/3.2.6:
     dependencies:
       ms: 2.1.2
-    dev: true
     resolution:
       integrity: sha512-mel+jf7nrtEl5Pn1Qx46zARXKDpBbvzezse7p7LqINmdoIk8PYP5SySaxEmYv6TZ0JyEKA1hsCId6DIhgITtWQ==
   /decamelize/1.2.0:
@@ -1672,6 +1681,17 @@ packages:
       node: '>= 0.8'
     resolution:
       integrity: sha512-rdw7q6GTlibqVVbXr0CKelfV5iY8G2HqEUkhSk297BMbSpSL8crXC+9rjKoMcZZEsksX30le6f/4ul4E28gegw==
+  /http-errors/1.6.3:
+    dependencies:
+      depd: 1.1.2
+      inherits: 2.0.3
+      setprototypeof: 1.1.0
+      statuses: 1.5.0
+    dev: false
+    engines:
+      node: '>= 0.6'
+    resolution:
+      integrity: sha1-i1VoC7S+KDoLW/TqLjhYC+HZMg0=
   /http-errors/1.7.3:
     dependencies:
       depd: 1.1.2
@@ -1738,7 +1758,6 @@ packages:
     resolution:
       integrity: sha1-sX0I0ya0Qj5Wjv9xn5GwscvfafE=
   /inherits/2.0.3:
-    dev: true
     resolution:
       integrity: sha1-Yzwsg+PaQqUC9SRmAiSA9CCCYd4=
   /inherits/2.0.4:
@@ -2085,6 +2104,24 @@ packages:
       node: '>= 4'
     resolution:
       integrity: sha1-2kCHXfSd4FOQmNFwC1CCDOvNIdA=
+  /koa-send/5.0.0:
+    dependencies:
+      debug: 3.2.6
+      http-errors: 1.7.3
+      mz: 2.7.0
+      resolve-path: 1.4.0
+    dev: false
+    engines:
+      node: '>= 7.6.0'
+    resolution:
+      integrity: sha512-90ZotV7t0p3uN9sRwW2D484rAaKIsD8tAVtypw/aBU+ryfV+fR2xrcAwhI8Wl6WRkojLUs/cB9SBSCuIb+IanQ==
+  /koa-static-server/1.4.0:
+    dependencies:
+      koa-send: 5.0.0
+      upath: 1.2.0
+    dev: false
+    resolution:
+      integrity: sha512-ZkGzD9+2OZubOL458GL8p7vEGfaneGGKSKIUJw9ftXzn36capQw3Wu5A//o7S10tQNgD1oYs96LGPtqtkcuXbQ==
   /koa/2.11.0:
     dependencies:
       accepts: 1.3.7
@@ -2447,9 +2484,16 @@ packages:
     resolution:
       integrity: sha1-VgiurfwAvmwpAd9fmGF4jeDVl8g=
   /ms/2.1.2:
-    dev: true
     resolution:
       integrity: sha512-sGkPx+VjMtmA6MX27oA4FBFELFCZZ4S4XqeGOXCv68tT+jb3vk/RyaKWP0PTKyWtmLSM0b+adUTEvbs1PEaH2w==
+  /mz/2.7.0:
+    dependencies:
+      any-promise: 1.3.0
+      object-assign: 4.1.1
+      thenify-all: 1.6.0
+    dev: false
+    resolution:
+      integrity: sha512-z81GNO7nnYMEhrGh9LeymoE4+Yr0Wn5McHIZMK5cfQCl+NDX08sCZgUc9/6MHni9IWuFLm1Z3HTCXu2z9fN62Q==
   /nan/2.14.0:
     dev: true
     optional: true
@@ -2814,7 +2858,6 @@ packages:
     resolution:
       integrity: sha1-zg6+ql94yxiSXqfYENe1mwEP1RU=
   /path-is-absolute/1.0.1:
-    dev: true
     engines:
       node: '>=0.10.0'
     resolution:
@@ -3193,6 +3236,15 @@ packages:
       node: '>=4'
     resolution:
       integrity: sha1-six699nWiBvItuZTM17rywoYh0g=
+  /resolve-path/1.4.0:
+    dependencies:
+      http-errors: 1.6.3
+      path-is-absolute: 1.0.1
+    dev: false
+    engines:
+      node: '>= 0.8'
+    resolution:
+      integrity: sha1-xL2p9e+y/OZSR4c6s2u02DT+Fvc=
   /resolve-url/0.2.1:
     dev: true
     resolution:
@@ -3308,6 +3360,10 @@ packages:
     dev: true
     resolution:
       integrity: sha1-KQy7Iy4waULX1+qbg3Mqt4VvgoU=
+  /setprototypeof/1.1.0:
+    dev: false
+    resolution:
+      integrity: sha512-BvE/TwpZX4FXExxOxZyRGQQv651MSwmWKZGqvmPcRIjDqWub67kTKuIMx43cZZrS/cBBzwBcNDWoFxt2XEFIpQ==
   /setprototypeof/1.1.1:
     dev: false
     resolution:
@@ -3677,6 +3733,20 @@ packages:
     hasBin: true
     resolution:
       integrity: sha512-oDG16n2WKm27JO8h4y/w3iqBGAOSCtq7k8dRmrn4Wf9NouL0b2WpMHGChFGZq4nFAQy1FsNJrVQHfurXOSTmOA==
+  /thenify-all/1.6.0:
+    dependencies:
+      thenify: 3.3.0
+    dev: false
+    engines:
+      node: '>=0.8'
+    resolution:
+      integrity: sha1-GhkY1ALY/D+Y+/I02wvMjMEOlyY=
+  /thenify/3.3.0:
+    dependencies:
+      any-promise: 1.3.0
+    dev: false
+    resolution:
+      integrity: sha1-5p44obq+lpsBCCB5eLn2K4hgSDk=
   /through/2.3.8:
     dev: true
     resolution:
@@ -3785,6 +3855,11 @@ packages:
       node: '>=0.6.x'
     resolution:
       integrity: sha512-LxhtAkPDTkVCMQjt2h6eBVY28KCjikZqZfMcC15YBeNjkgUpdCfBu5HoiOTDu86v6smE8yOjyEktJ8hlbANHQA==
+  /ttab/0.6.1:
+    dev: true
+    hasBin: true
+    resolution:
+      integrity: sha512-9JvkYlhFMrmrgINQUn5ZJqVVtH+BDpGeFrDhlAaiR0/NgB4TfwU9gNv5Vwuel7gWs8wohEmwWiJuWPtV0swwyw==
   /tty-browserify/0.0.0:
     dev: true
     resolution:
@@ -3868,7 +3943,6 @@ packages:
     resolution:
       integrity: sha1-0vD3N9FrBhXnKmk17QQhRXLVb5c=
   /upath/1.2.0:
-    dev: true
     engines:
       node: '>=4'
     resolution:
@@ -4193,16 +4267,20 @@ packages:
       integrity: sha512-faQrqNMzcPCHGVC2aaOINk13K+aaBDUPjGWl0teOXywElLjyVAB6Oe2jj62jHYtwsU49jXhScYbvPENK+6zAvQ==
 specifiers:
   '@types/koa': 2.0.52
+  '@types/koa-static-server': 1.3.0
+  '@types/node': 12.12.7
   '@types/react': 16.9.11
   '@types/react-dom': 16.9.4
   concurrently: 5.0.0
   koa: 2.11.0
+  koa-static-server: 1.4.0
   nodemon: 1.19.4
   nps: 5.9.8
   react: 16.11.0
   react-dom: 16.11.0
   stream-template: 0.0.10
   ts-loader: 6.2.1
+  ttab: 0.6.1
   typescript: 3.7.2
   webpack: 4.41.2
   webpack-cli: 3.3.10
